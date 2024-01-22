@@ -1,0 +1,10 @@
+.creation-menu {
+  width: 500px;
+  height: 100vh;
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.menu-title {
+  text-align: center;
+}

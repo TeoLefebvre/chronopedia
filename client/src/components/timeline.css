@@ -1,0 +1,16 @@
+.timeline {
+  position: relative;
+  width: calc(100% - 80px);
+  height: 90%;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.line {
+  margin-left: 20px;
+  height: 4px;
+  background-color: black;
+}

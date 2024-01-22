@@ -1,0 +1,27 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+
+.toolbar-left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.toolbar-left > * {
+  margin-right: 10px;
+}
+
+.toolbar-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar-right > * {
+  margin-left: 10px;
+}

@@ -1,0 +1,27 @@
+.marker {
+  position: absolute;
+  top: calc(50% - 5px);
+  text-align: center;
+}
+
+.marker::before {
+  position: relative;
+  left: 18px;
+}
+
+.point::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.bar::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 10px;
+  background-color: black;
+}
