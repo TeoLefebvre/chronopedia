@@ -9,3 +9,42 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  username String
+  password String
+  timelines Timeline[]
+}
+
+model Timeline {
+  id Int @id @default(autoincrement())
+  title String
+  author User @relation(fields: [authorId], references: [id])
+  authorId Int
+  dates Date[]
+  epochs Epoch[]
+}
+
+model Date {
+  id Int @id @default(autoincrement())
+  title String
+  date Int
+  weight Int
+  place String?
+  content String?
+  timeline Timeline @relation(fields: [timelineId], references: [id])
+  timelineId Int
+}
+
+model Epoch {
+  id Int @id @default(autoincrement())
+  title String
+  start Int
+  end Int
+  place String?
+  content String?
+  timeline Timeline @relation(fields: [timelineId], references: [id])
+  timelineId Int
+}

@@ -1,0 +1,34 @@
+# Pour exécuter : docker compose up (ajouter -d pour lancer en arrière plan mais ducoup on voit pas les logs)
+# Pour se connecter à l'application en CLI : docker exec -it api-app-1 sh
+# Pour se connecter à la DB avec la CLI : docker exec -it api-mariadb-1 mariadb -h localhost -u admin -p
+
+services:
+  app:
+    image: node:20-alpine
+    command: sh -c "npm install && npm run dev"
+    # Les 2 && sont importants pour qu'il exécute les commandes les unes après les autres
+    # Avec un seul &, les 2 commandes sont exécutées en même temps et donc si les modules ne sont pas encore installés, le container crash.
+    ports:
+      - 3000:3000 # host:container
+    working_dir: /app
+    volumes:
+      - ./:/app # bind mounts pour le développement
+      - .docker.env:/app/.env
+  
+  mariadb:
+    image: mariadb:10
+    restart: always
+    volumes:
+      - chronopedia:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      # variables d'env utilisées seulement une fois à la création de la DB et du volume
+      # une fois créée, lorsque que la DB est montée, elle ne peut pas être modifié par les variables d'env (voir https://hub.docker.com/_/mariadb)
+      MARIADB_ROOT_PASSWORD: "root"
+      MARIADB_DATABASE: "chronopedia"
+      MARIADB_USER: "admin"
+      MARIADB_PASSWORD: "admin"
+
+volumes:
+  chronopedia:
