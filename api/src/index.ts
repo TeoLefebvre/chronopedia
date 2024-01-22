@@ -5,7 +5,7 @@ import api from "./routes/api"
 const app: Express = express()
 
 app.use(cors())
-app.use("/", api)
+app.use("/api", api)
 
 const port = 3000
 app.listen(port, () => {
