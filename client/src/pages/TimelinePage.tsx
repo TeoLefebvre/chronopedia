@@ -1,12 +1,13 @@
-import './app.css'
+import './timelinepage.css'
 import { useState } from "react"
-import ToolBar from "./components/ToolBar"
-import SideBar from "./components/SideBar"
-import Timeline from './components/Timeline'
-import CreationBar from "./components/CreationMenu"
-import { timeline } from './components/Timeline/timeline'
+import ToolBar from '../components/Timeline/components/ToolBar'
+import SideBar from '../components/Timeline/components/SideBar'
+import Timeline from '../components/Timeline/components/Timeline'
+import CreationBar from '../components/Timeline/components/CreationMenu'
+import { timeline } from '../components/Timeline/utils/timeline'
 
-export default function App() {
+
+export default function TimelinePage() {
 
   const data = {
     topbar: {

@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react"
-import "./toolbar.css"
+import "../style/toolbar.css"
 
 type Props = {
   timelineTitle?: string,

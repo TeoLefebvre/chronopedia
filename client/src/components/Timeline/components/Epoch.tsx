@@ -1,6 +1,6 @@
-import { placementLeft, epochWidth } from "./functions"
-import { EpochType } from "./types"
-import "./epoch.css"
+import { placementLeft, epochWidth } from "../utils/functions"
+import { EpochType } from "../utils/types"
+import "../style/epoch.css"
 
 type EpochProps = {
   event: EpochType,

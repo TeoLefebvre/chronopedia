@@ -1,6 +1,6 @@
 import { MouseEvent, MouseEventHandler, useRef } from "react"
-import { placementLeft } from "./functions"
-import "./marker.css"
+import { placementLeft } from "../utils/functions"
+import "../style/marker.css"
 
 type MarkerProps = {
   type: string,

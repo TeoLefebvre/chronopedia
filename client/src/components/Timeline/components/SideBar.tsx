@@ -1,5 +1,5 @@
 import { MouseEvent, MouseEventHandler, useState } from "react"
-import "./sidebar.css"
+import "../style/sidebar.css"
 
 type SideBarProps = {
   data: {

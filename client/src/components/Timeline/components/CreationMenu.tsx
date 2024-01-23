@@ -1,4 +1,4 @@
-import "./creationmenu.css"
+import "../style/creationmenu.css"
 
 export default function CreationBar() {
 

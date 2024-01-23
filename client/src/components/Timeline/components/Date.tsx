@@ -1,8 +1,8 @@
 import { useRef } from "react"
 import Marker from "./Marker"
-import { placementLeft } from "./functions"
-import { DateType } from "./types"
-import "./date.css"
+import { placementLeft } from "../utils/functions"
+import { DateType } from "../utils/types"
+import "../style/date.css"
 
 type DateProps = {
   event: DateType,

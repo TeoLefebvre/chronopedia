@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import "./timeline.css"
-import { DateType, EpochType, TimelineType } from "./Timeline/types"
-import { algorithm_card, algorithm_epoch } from "./Timeline/functions"
-import Marker from "./Timeline/Marker"
-import Date from "./Timeline/Date"
-import Epoch from "./Timeline/Epoch"
+import "../style/timeline.css"
+import { DateType, EpochType, TimelineType } from "../utils/types"
+import { algorithm_card, algorithm_epoch } from "../utils/functions"
+import Marker from "./Marker"
+import Date from "./Date"
+import Epoch from "./Epoch"
 
 type TimelineProps = {
   zoom: number,
