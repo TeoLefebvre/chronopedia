@@ -9,12 +9,16 @@
   "scripts": {
     "build": "npx tsx",
     "start": "node dist/index.js",
-    "dev": "npx tsc --watch"
+    "dev": "nodemon src/index.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.5",
+    "nodemon": "^3.0.3",
     "prisma": "^5.8.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"

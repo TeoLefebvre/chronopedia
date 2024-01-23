@@ -1,30 +1,21 @@
-import { Date, Epoch, PrismaClient, Timeline } from "@prisma/client"
+import { Date, Epoch, PrismaClient, Timeline, User } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
-export async function getTimeline(timelineId: number): Promise<Timeline | null> {
-  const timeline = await prisma.timeline.findUnique({
+export async function searchUser(username: string): Promise<User | null> {
+  const user = await prisma.user.findFirst({
     where: {
-      id: timelineId
+      username: username
     }
   })
-  return timeline
+  return user
 }
 
-export async function getDate(dateId: number): Promise<Date | null> {
-  const date = await prisma.date.findUnique({
+export async function getTimelines(authorId: number): Promise<Timeline[]> {
+  const timelines = await prisma.timeline.findMany({
     where: {
-      id: dateId
+      authorId: authorId
     }
   })
-  return date
-}
-
-export async function getEpoch(epochId: number): Promise<Epoch | null> {
-  const epoch = await prisma.epoch.findUnique({
-    where: {
-      id: epochId
-    }
-  })
-  return epoch
+  return timelines
 }

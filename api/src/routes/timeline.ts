@@ -1,11 +1,15 @@
 import express, { Request, Response, NextFunction } from "express"
-import { getTimeline } from "../fetch"
+import {getTimelines} from "../fetch"
 
 export const router = express.Router()
 
-router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
-  getTimeline(Number(req.params.id))
-    .then(timeline => {
-      
-    })
+router.get("/timelines", (req: Request, res: Response, next: NextFunction) => {
+  if (req.query.userId) {
+    getTimelines(Number(req.query.userId))
+      .then(timelines => {
+        res.json(timelines)
+      })
+  } else {
+    next("Can't find timelines because no userId was specified")
+  }
 })
