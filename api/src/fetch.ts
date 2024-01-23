@@ -19,3 +19,21 @@ export async function getTimelines(authorId: number): Promise<Timeline[]> {
   })
   return timelines
 }
+
+type completeTimeline = Timeline & {
+  dates: Date[],
+  epochs: Epoch[]
+}
+
+export async function getCompleteTimeline(timelineId: number): Promise<completeTimeline | null> {
+  const timeline = await prisma.timeline.findUnique({
+    where: {
+      id: timelineId
+    },
+    include: {
+      dates: true,
+      epochs: true
+    }
+  })
+  return timeline
+} 

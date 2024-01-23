@@ -9,6 +9,6 @@ router.get("/:username", (req: Request, res: Response, next: NextFunction) => {
       res.json(user)
     })
     .catch(e => {
-      next("Can't fin user, an error occured")
+      next("Can't find user, an error occured")
     })
 })

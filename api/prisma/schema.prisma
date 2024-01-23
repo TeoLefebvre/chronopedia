@@ -22,6 +22,8 @@ model User {
 model Timeline {
   id Int @id @default(autoincrement())
   title String
+  start Int
+  end Int
   author User @relation(fields: [authorId], references: [id])
   authorId Int
   dates Date[]

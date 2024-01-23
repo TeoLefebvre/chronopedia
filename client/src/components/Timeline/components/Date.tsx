@@ -31,18 +31,18 @@ export default function Date({event, interval, zoom}: DateProps) {
     <Marker 
       key={event.id} 
       type="point" 
-      date={event.start} 
+      date={event.date} 
       interval={interval} 
       zoom={zoom} 
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave}
     />
     <div className="card-container" style={{
-      left: placementLeft(event.start, interval, -75 + 20, zoom) // -75 car c'est la moitié de la width de la carte (cf css) +20 pour compenser le margin-left de la ligne 
+      left: placementLeft(event.date, interval, -75 + 20, zoom) // -75 car c'est la moitié de la width de la carte (cf css) +20 pour compenser le margin-left de la ligne 
     }}>
       <div className="card" ref={cardRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <h3 className="card-title">{event.title}</h3>
-        <p className="card-date">{event.start}</p>
+        <p className="card-date">{event.date}</p>
         {event.place && <p className="card-place">{event.place}</p>}
       </div>
       <div className="card-bar"></div>

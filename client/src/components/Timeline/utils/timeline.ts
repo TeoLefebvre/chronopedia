@@ -1,6 +1,7 @@
 import { TimelineType } from "./types"
 
 export const timeline: TimelineType = {
+  id: 1,
   title: "20e siècle",
   author: "Téo",
   start: 1900,

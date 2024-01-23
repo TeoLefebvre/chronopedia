@@ -1,13 +1,34 @@
 import './timelinepage.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ToolBar from '../components/Timeline/components/ToolBar'
 import SideBar from '../components/Timeline/components/SideBar'
 import Timeline from '../components/Timeline/components/Timeline'
 import CreationBar from '../components/Timeline/components/CreationMenu'
-import { timeline } from '../components/Timeline/utils/timeline'
+import { useParams } from 'react-router-dom'
+import { TimelineType } from '../components/Timeline/utils/types'
 
 
 export default function TimelinePage() {
+
+  const {timelineId} = useParams()
+  let [timeline, setTimeline] = useState<TimelineType | undefined>(undefined)
+
+  useEffect(() => {
+    if (timelineId) {
+      fetch(`http://localhost:3000/api/timeline/${timelineId}`)
+        .then(response => {
+          if (response.ok)
+            return response.json()
+          throw response
+        })
+        .then(data => {
+          setTimeline(data)
+        })
+        .catch(err => {
+          console.log("Error while fetching data", err)
+        })
+    }
+  }, [])
 
   const data = {
     topbar: {
@@ -44,12 +65,12 @@ export default function TimelinePage() {
     <div className="app">
       <div className="col left">
         <ToolBar
-          timelineTitle={data.topbar.timelineTitle} 
-          timelineStart={data.topbar.timelineStart} 
-          timelineEnd={data.topbar.timelineEnd}
+          timelineTitle={timeline?.title} 
+          timelineStart={timeline?.start} 
+          timelineEnd={timeline?.end}
           handleSidebarOpen={handleSidebarOpen}
-          handleZoom={setZoom}
           zoom={zoom}
+          handleZoom={setZoom}
         />
         <Timeline zoom={zoom} timeline={timeline}/>
       </div>

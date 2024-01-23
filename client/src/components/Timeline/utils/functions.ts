@@ -25,7 +25,7 @@ export function algorithm_card(dates: DateType[], width: number, zoom: number, i
   // calculer les positions sur la frise
   for (const date of dates)
     // @ts-expect-error
-    date.position = timelineWidth * (date.start - interval[0]) / (interval[1] - interval[0])
+    date.position = timelineWidth * (date.date - interval[0]) / (interval[1] - interval[0])
 
   // creer une liste des cartes à afficher (donc initialement vide)
   let cards: DateType[] = []

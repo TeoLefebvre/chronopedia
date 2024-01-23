@@ -3,8 +3,8 @@ import "../style/toolbar.css"
 
 type Props = {
   timelineTitle?: string,
-  timelineStart: number,
-  timelineEnd: number,
+  timelineStart?: number,
+  timelineEnd?: number,
   handleSidebarOpen: MouseEventHandler,
   zoom: number,
   handleZoom: React.Dispatch<React.SetStateAction<number>>

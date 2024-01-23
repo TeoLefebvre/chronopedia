@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <TimelinePage />,
   },
   {
-    path: "/timeline/:id",
+    path: "/timeline/:timelineId",
     element: <TimelinePage />
   },
   {

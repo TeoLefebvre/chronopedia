@@ -1,31 +1,29 @@
 export type DateType = {
   id: number,
   title: string,
-  type: string,
-  start: number,
+  date: number,
   weight: number,
   place?: string,
-  content?: string
+  content?: string,
+  timelineId: number
 }
 
 export type EpochType = {
   id: number,
   title: string,
-  type: string,
   start: number,
   end: number,
   place?: string,
-  content?: string
+  content?: string,
+  timelineId: number
 }
 
 export type TimelineType = {
-  title: string,
   id: number,
-  author: string,
+  title: string,
   start: number,
   end: number,
-  events: {
-    dates: DateType[],
-    epochs: EpochType[]
-  }
+  author: string,
+  dates: DateType[],
+  epochs: EpochType[]
 }
