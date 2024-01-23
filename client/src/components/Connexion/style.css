@@ -1,0 +1,97 @@
+:root {
+  --principal_color: transparent; 
+  --secondary_color: black; 
+  }
+
+body {
+  margin:0;
+  font-family: 'Roboto', sans-serif; 
+  height: 100vh;
+  text-decoration: none;
+}
+
+.bg {
+  z-index: -1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  animation: AnimateBG 20s ease infinite;
+}
+
+@keyframes AnimateBG {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.topbar {
+  background-color: var(--principal_color);
+  color: var(--secondary_color);
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  width: 100%;
+  text-align: center;
+  font-family: 'Dancing script', cursive, sans-serif;
+  font-size: 10vh;
+  color: black
+}
+
+.middle {
+  background-color: var(--principal_color);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%
+}
+
+.input_text {
+  box-sizing: border-box;
+  margin: 5px 0px 2px 10px;
+  width: 100%;
+  height: 38.25px;
+  vertical-align: middle;
+  background-color: #F9F9F9;
+  border: 2px solid var(--secondary_color);
+  border-radius: 7px;
+  color: var(--secondary_color);
+  text-align: left;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.input_text:focus {
+  box-sizing: border-box;
+  width: 100%;
+  height: 38.25px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+  border: 3px solid var(--secondary_color);
+  border-radius: 7px;
+  color: var(--secondary_color);
+  text-align: left;
+  font-weight: 500;
+  margin: 5px 10px 2px 5px
+}
