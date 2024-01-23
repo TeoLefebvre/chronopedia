@@ -1,3 +1,13 @@
+/* 
+Script pour "provisionner" la base de données. Pour ça, exécuter les commandes suivantes : 
+// pour utiliser la dernière migration et l'appliquer à la base de données : https://www.prisma.io/docs/orm/prisma-client/deployment/deploy-database-changes-with-prisma-migrate
+npx prisma migrate deploy
+// pour exécuter ce script et ajouter les données dans la base de données : https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding
+npx prisma db seed
+// pour reinitialiser toute la base de données (drop db, create new db, prisma migrate, seed) : https://www.prisma.io/docs/orm/prisma-client/queries/crud#deleting-all-records-with-prisma-migrate
+npx prisma migrate reset
+*/
+
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient()
@@ -9,9 +19,9 @@ async function main() {
 
 async function provisionUser() {
   const Users = [
-    {username: "teo", email: "teo.lefebvre@student-cs.fr", password: "mdp"},
-    {username: "arthur", email: "arthur.remoue@student-cs.fr", password: "mdp"},
-    {username: "alexis", email: "alexis.peters@student-cs.fr", password: "mdp"}
+    {id: 1, username: "teo", email: "teo.lefebvre@student-cs.fr", password: "mdp"},
+    {id: 2, username: "arthur", email: "arthur.remoue@student-cs.fr", password: "mdp"},
+    {id: 3, username: "alexis", email: "alexis.peters@student-cs.fr", password: "mdp"}
   ]
 
   Users.forEach(async (user) => {
@@ -23,8 +33,8 @@ async function provisionUser() {
 
 async function provisionTimeline() {
   const Timelines = [
-    {title: "Première Guerre Mondiale", authorId: 1},
-    {title: "Seconde Guerre Mondiale", authorId: 2}
+    {id: 1, title: "Première Guerre Mondiale", authorId: 1},
+    {id: 2, title: "Seconde Guerre Mondiale", authorId: 1}
   ]
 
   Timelines.forEach(async (timeline) => {
