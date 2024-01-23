@@ -5,6 +5,7 @@ import "./style.css"
 import TimelinePage from './pages/TimelinePage'
 import HomePage from './pages/HomePage'
 import ConnectionPage from './pages/ConnectionPage'
+import TimelineListPage from './pages/TimelineListPage'
 
 const router = createBrowserRouter([
   {
@@ -22,16 +23,12 @@ const router = createBrowserRouter([
   {
     path: "/connexion",
     element: <ConnectionPage />
+  },
+  {
+    path: "/timelines",
+    element: <TimelineListPage />
   }
 ])
-
-// function Blog() {
-//   const {id} = useParams()
-
-//   return <div>
-//     C'est le blog numéro {id} !
-//   </div>
-// }
 
 export default function Router () {
   return <RouterProvider router={router} />

@@ -20,6 +20,7 @@ export type EpochType = {
 
 export type TimelineType = {
   title: string,
+  id: number,
   author: string,
   start: number,
   end: number,

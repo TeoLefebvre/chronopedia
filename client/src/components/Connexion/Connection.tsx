@@ -13,16 +13,11 @@ export default function Connection() {
     <div className="middle">
       <div id="tab_connexion">
         <div id="form_connexion">
-          <form action="className.html" method="get" className="connexion">
+          <form action="/timelines" method="get" className="connexion">
             <div>
-              <label  htmlFor="login-username">Nom d'utilisateur</label>
+              <label  htmlFor="username">Nom d'utilisateur</label>
               <input className="input_text" type="text" name="username" id="username"
                 placeholder="Nom d'utilisateur" spellCheck="false" required />
-            </div>
-            <div>
-              <label htmlFor="password">Mot de passe</label>
-              <input className="input_text" type="password" name="password" id="password"
-                placeholder="Mot de passe" spellCheck="false" required />
             </div>
             <div>
               <button id="submit_button" type="submit">Se Connecter</button>
