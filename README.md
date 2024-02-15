@@ -1,3 +1,5 @@
 # Chronopedia
 
-Projet S7 réalisé par Téo Lefebvre, Alexis Péters et Arthur Remoué.
+A web application to easily create, edit and share interactive timelines !
+
+Still in development... 

@@ -41,8 +41,6 @@ export default function Timeline({zoom, timeline}: TimelineProps) {
       }
     }
   }
-
-  console.log("render")
   
   return <div className="timeline" ref={timelineRef} >
     <div className="line" style={{width: `${zoom}%`}}></div>
